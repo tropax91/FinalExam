@@ -1,0 +1,19 @@
+{
+  "name": "bachelor-project",
+  "version": "1.0.0",
+  "description": "Bachelor project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoithebrain/Bachelor-project.git"
+  },
+  "author": "Casper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yoithebrain/Bachelor-project/issues"
+  },
+  "homepage": "https://github.com/Yoithebrain/Bachelor-project#readme"
+}
