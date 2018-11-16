@@ -1,11 +1,7 @@
 {
   "name": "bachelor-project",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "Laundry booking website",
-=======
   "description": "Bachelor project",
->>>>>>> 7abc525ab78fa76bdcee89090960acb40bb1b668
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,21 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/Yoithebrain/Bachelor-project.git"
   },
-<<<<<<< HEAD
-  "author": "Lamin",
-=======
   "author": "Casper",
->>>>>>> 7abc525ab78fa76bdcee89090960acb40bb1b668
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Yoithebrain/Bachelor-project/issues"
   },
   "homepage": "https://github.com/Yoithebrain/Bachelor-project#readme",
   "dependencies": {
-<<<<<<< HEAD
-    "express": "^4.16.4"
-=======
     "mysql": "^2.16.0"
->>>>>>> 7abc525ab78fa76bdcee89090960acb40bb1b668
   }
 }
