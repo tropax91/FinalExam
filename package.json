@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/Yoithebrain/Bachelor-project#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "handlebars": "^4.0.12",
+    "mysql": "^2.16.0",
+    "passport": "^0.4.0"
   }
 }
