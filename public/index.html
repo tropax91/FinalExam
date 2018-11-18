@@ -11,9 +11,10 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-      <a class="navbar-brand" href="index.html">Laundry </a>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/logo.jpg" width="100" height="50" alt=""> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,10 +44,31 @@
 
       </div>
     </nav>
+  </div>
+  <!--Image Slider-->
+  <div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#slides" data-slide-to="0" class="active"></li>
+      <li data-target="#slides" data-slide-to="1"></li>
+      <li data-target="#slides" data-slide-to="2"></li>
+   </ul>
+   <div class="carousel-inner">
+     <div class="carousel-item active">
+       <img src="./images/machines06.jpg" alt="">
+      </div>
+   </div>
+   <div class="carousel-item">
+      <img src="./images/machines06.jpg" alt="">
+    </div>
+  
+  <div class="carousel-item">
+      <img src="./images/machines06.jpg" alt="">
+    </div>
+  </div>
+  </div>
+</div>
 
-
-
-
+<!--responsive bootstrap website start to finish with bootstrap 4-->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
