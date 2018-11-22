@@ -1,12 +1,15 @@
 var express = require('express')
+var mysql = require('mysql')
+
 var app = express()
 var app = Handlebars();
+
+
 var config = require('../BachelorProject/config/database.js')
 var connection = mysql.createConnection(config.databaseConfig);
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 })
-
 
   
 app.listen('3000', function(err){
