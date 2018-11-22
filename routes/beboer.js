@@ -1,3 +1,10 @@
+const express = require('express');
+const router = express.Router();
+
+router.get('/testing.html', function(req, res){
+    res.sendFile(__dirname + 'testing.html');
+});
+
 var occupantName = "";
 var occupantId;
 var occupantRole;
@@ -15,3 +22,4 @@ function Beboer (name, id, role, buildingnr, username, password){
     this.occupantpassword = password;
 }
 
+module.exports = router;
