@@ -20,3 +20,8 @@ app.listen('3000', function(err){
     console.log("Server is running on port 3000...");
     
 })
+
+let beboer = require('./routes/beboer.js');
+app.use('/beboer', beboer);
+let bestyrelse = require('./routes/Bestyrelse.js');
+app.use('/bestyrelse', bestyrelse);
