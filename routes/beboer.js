@@ -46,9 +46,10 @@ function getUsers() {
 }
 
 function checkUserExists(username, password, dbconnection) {
-
+    //SQL statement
     let sql = 'CALL checkUser(?, ?)'
-
+    
+    //Query with some error handling for good measure and a result which we check to see if its bigger than zero
     dbconnection.query(sql, ['inser username here', 'insert password here'], function(err, result){
         if(err){
             console.log("something went wrong")
