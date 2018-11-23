@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-var occupantName = "";
-var occupantId;
-var occupantRole;
-
-function Beboer (name, id, role){
-    this.occupantName = name;
-    this.occupantId = id;
-    this.occupantRole = role;
-}
-
-=======
 const express = require('express');
 const router = express.Router();
 
@@ -35,4 +23,3 @@ function Beboer (name, id, role, buildingnr, username, password){
 }
 
 module.exports = router;
->>>>>>> christian
