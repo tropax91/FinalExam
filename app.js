@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
-
+const mysql = require('mysql');
 
 app.use(express.static(__dirname + "/public"))// Middleware. Needed in order to serve CSS, JS and images from html
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-const bodyParser = require('body-parser');
+
 
 //const bcrypt = require ('bcrypt');
 
@@ -16,9 +16,6 @@ const bodyParser = require('body-parser');
 var config = require('../BachelorProject/config/database.js')
 var connection = mysql.createConnection(config.databaseConfig);
 
-app.use(express.static(__dirname + "views"));
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 
 //Home route
 app.get('/', function (req, res) {
