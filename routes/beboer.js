@@ -41,9 +41,24 @@ function sendToDB(){
 
 //Function to get a user or all users from db
 function getUsers() {
-    
 
-    
+
+}
+
+function checkUserExists(username, password, dbconnection) {
+
+    let sql = 'CALL checkUser(?, ?)'
+
+    dbconnection.query(sql, ['inser username here', 'insert password here'], function(err, result){
+        if(err){
+            console.log("something went wrong")
+        } else{
+            if(result > 0 ){
+                console.log("user exists")
+                //do some code to send the app user further into the app
+            }
+        }
+    })
 }
 
 module.exports = router;
