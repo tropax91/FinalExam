@@ -1,10 +1,8 @@
-var occupantName = "";
-var occupantId;
-var occupantRole;
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcrypt');
+const passport = require('passport')
 
-function Beboer (name, id, role){
-    this.occupantName = name;
-    this.occupantId = id;
-    this.occupantRole = role;
-}
-
+router.get('/register', function(req,res){
+    res.render('register')
+});
