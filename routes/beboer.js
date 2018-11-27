@@ -39,16 +39,46 @@ function sendToDB(){
     
 }
 
-//Function to get a user or all users from db
-function getUsers() {
-
+/*Function to get a user or all users from db, the function checks if 
+there have been any input in a string. 
+If empty, return all users from DB table*/
+function getUsers(in_Username) {
+    //Checks if username is not empty
+    if(in_Username != "")
+    {
+        sql = "CALL getUser(?)"
+        dbconnection.query(sql, ['username'], function(err, row)
+        {
+            if(err)
+            {
+                console.log("Query fucked up when fetching one user")
+            } else
+            {
+                //Add logic for where you want the resultset to put data from the row in
+                console.log(row[0].b_user + " was fetched")
+            }
+        })
+        
+    } else
+    {
+        sql = "CALL getAllUsers()";
+        dbconnection.query(sql, function(err, rows){
+            if(err)
+            {
+                console.log("Query fuked up")
+            } else
+            {
+               //Add logic for rows here, rows is the resultset. 
+            }
+        })
+    }
 
 }
 
 function checkUserExists(username, password, dbconnection) {
     //SQL statement
     let sql = 'CALL checkUser(?, ?)'
-    
+
     //Query with some error handling for good measure and a result which we check to see if its bigger than zero
     dbconnection.query(sql, ['inser username here', 'insert password here'], function(err, result){
         if(err){
