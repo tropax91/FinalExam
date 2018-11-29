@@ -1,8 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const passport = require('passport')
+const passport = require('passport');
 
-router.get('/register', function(req,res){
-    res.render('register')
+
+// Register Form
+router.get('/register', function(req, res) {
+    res.render('register');
 });
+
+
+// Login Form
+router.get('/login', function(req, res) {
+    res.render('login');
+});
+
+module.exports = router;
