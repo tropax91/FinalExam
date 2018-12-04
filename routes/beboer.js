@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 let sql = "";
 
-router.get('/testing.html', function(req, res){
-    res.sendFile(__dirname + 'testing.html');
+router.get('/login', function(req, res){
+    res.render('login');
 });
 
 var occupantName = "";
@@ -91,5 +91,10 @@ function checkUserExists(username, password, dbconnection) {
         }
     })
 }
+
+// Register Form
+router.get('/register', function(req, res) {
+    res.render('register');
+});
 
 module.exports = router;
