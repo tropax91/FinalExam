@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 let sql = "";
 
-router.get('/testing.html', function(req, res){
-    res.sendFile(__dirname + 'testing.html');
+router.get('/frontpage', function(req, res){
+    res.render('frontpage');
 });
 
 var occupantName = "";
