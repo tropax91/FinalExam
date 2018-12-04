@@ -12,11 +12,19 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+
+{{> navbar}}
+
 </head>
 <div>
 <div class="top" style="text-align: center">
     <div class="middle">
+        <div>
+        {{if user}}
+        <p>Welcome {{username}}</p>
+        {{else}}
         <p>Welcome</p>
+        </div>
         <p>Laundry service at your personal use</p>
     </div>
     <div class="right" style="float: right">

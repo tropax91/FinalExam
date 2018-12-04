@@ -3,16 +3,16 @@ const router = express.Router();
 const passport = require('passport');
 let sql = "";
 
-router.get('/login', function(req, res){
-    res.render('login');
-});
-
 var occupantName = "";
 var occupantId;
 var occupantRole;
 var occupantbuildingId;
 var occupantusername = "";
 var occupantpassword = "";
+
+router.get('/login', function(req, res){
+    res.render('login');
+});
 
 
 function Beboer (name, id, role, buildingnr, username, password){
@@ -96,6 +96,11 @@ function checkUserExists(username, password, dbconnection) {
 // Register Form
 router.get('/register', function(req, res) {
     res.render('register');
+});
+
+//Front page
+router.get("/frontpage", function(req,res){
+    res.render("frontpage", {username: req.Beboer.occupantName})
 });
 
 module.exports = router;
