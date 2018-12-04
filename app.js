@@ -42,8 +42,10 @@ app.get("/", function(req,res) {
 // Route Files
 let nodemailer = require('./routes/nodemailer');
 let beboer = require('./routes/beboer')
+let bestyrelse = require('./routes/bestyrelse')
 app.use('/nodemailer',nodemailer);
 app.use('/beboer', beboer);
+app.use('/bestyrelse', bestyrelse);
 
 
 

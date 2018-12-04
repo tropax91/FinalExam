@@ -9,21 +9,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-        <header>
-    <!--Navbar-->
-    {{> navbar}}
-    <!--/.Navbar-->
-
-  </header>
     <div class="container-fluid">
       {{msg}}
-      <br>
-      <br>
-        <form method="POST" action="send">
+        <form method="POST" action='/bestyrelse/edit/'>
           <div class="form-group row">
             <div class="form-group col-md-10">
-              <label for="vælgBygning">Vælg bygning </label>
-              <select class="form-control" name="vælgBygning">
+              <label for="title">Vælg bygning </label>
+              <s">
                 <option value="22-26">Bygning 22-26</option>
                 <option value="26-30">Bygning 26-30</option>
                 <option value="30-32">Bygning 30-32</option>
