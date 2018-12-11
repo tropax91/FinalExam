@@ -1,0 +1,75 @@
+
+
+/*Login*/
+.container2{
+  margin: auto;
+  width: 550px;
+  height: 600px;
+}
+.container3{
+  margin: auto;
+  width: 600px;
+  height: 750px;
+}
+
+
+/*Calender*/
+.month{
+padding: 70px 25px;
+width: 100%;
+background-color: darkkhaki;
+text-align: center;
+}
+.month ul li{
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.month .prev{
+float: left;
+padding: 10px;
+}
+.month .next{
+  float: right;
+  padding: 10px;
+}
+.weekdays{
+  margin: 0%;
+  padding: 10px 0px;
+  background-color: burlywood;
+}
+.weekdays li {
+display: inline-block;
+text-transform: capitalize;
+text-align: center;
+width: 14%;
+}
+.days{
+  padding: 10px 0px;
+  background-color: beige;
+  margin: 0;
+}
+.days li{
+  list-style: none;
+  display: inline-block;
+  width: 14%;
+  text-align: center;
+  font-size: 14px;
+  margin: 5px;
+  color: brown;
+}
+.top{
+  background: chocolate;
+  text-align: center;
+}
+ul{
+ list-style-type: none;
+}
+.bottom{
+  align-content: center;
+  background-color: chocolate;
+}
+button{
+  text-align: center;
+}
