@@ -90,12 +90,14 @@
 								<div class="collapse navbar-collapse">		  
 									<ul class="nav navbar-nav navbar-right">
 										<li class="smooth-menu"><a href="#home">home</a></li>
-										<li class=""><a href="/beboer/login">Login</a></li>
-										<li class=""><a href="/beboer/register">Sign Up </a></li>
+										<li class=""><a href="login">Login</a></li>
+										<li class=""><a href="register">Sign Up </a></li>
 										<li class="smooth-menu"><a href="#blog">blog</a></li>
 										<li class="smooth-menu"><a href="#subs">subscription</a></li>
 										<li>
-											<button class="book-btn"> book a cleaning											</button>
+											<form action="/login.ejs"> 
+											  <button class="book-btn"> book a cleaning											</button>
+										    </form>
 										</li><!--/.project-btn--> 
 									</ul>
 								</div><!-- /.navbar-collapse -->
@@ -155,21 +157,21 @@
 									<li role="presentation" class="active">
 									 	<a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
 									 		<i class="fa fa-tree"></i>
-									 		tours
+									 		cleaning
 									 	</a>
 									</li>
 
 									<li role="presentation">
 										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">
 											<i class="fa fa-building"></i>
-											hotels
+											laundry
 										</a>
 									</li>
 
 									<li role="presentation">
 									 	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">
-									 		<i class="fa fa-plane"></i>
-									 		flights
+									 		<i class="fa fa-home"></i>
+									 		home
 									 	</a>
 									</li>
 								</ul>
@@ -184,17 +186,17 @@
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
 
-														<h2>destination</h2>
+														<h2>dry cleaning</h2>
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination country</option><!-- /.option-->
+															  	<option value="default">enter your pick up location</option><!-- /.option-->
 
-															  	<option value="turkey">turkey</option><!-- /.option-->
+															  	<option value="turkey">frederiksberg</option><!-- /.option-->
 
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
+															  	<option value="russia">amager</option><!-- /.option-->
+															  	<option value="egept">rødovre</option><!-- /.option-->
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -202,12 +204,12 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination location</option><!-- /.option-->
+															  	<option value="default">enter your delivery location</option><!-- /.option-->
 
-															  	<option value="istambul">istambul</option><!-- /.option-->
+															  	<option value="istambul">frederiksberg</option><!-- /.option-->
 
-															  	<option value="mosko">mosko</option><!-- /.option-->
-															  	<option value="cairo">cairo</option><!-- /.option-->
+															  	<option value="mosko">amager</option><!-- /.option-->
+															  	<option value="cairo">rødovre</option><!-- /.option-->
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -217,7 +219,7 @@
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check in</h2>
+														<h2>pick up</h2>
 														<div class="travel-check-icon">
 															<form action="#">
 																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
@@ -228,7 +230,7 @@
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check out</h2>
+														<h2>delivery </h2>
 														<div class="travel-check-icon">
 															<form action="#">
 																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="22 -01 - 2017 ">
@@ -257,7 +259,7 @@
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>members</h2>
+														<h2>baskets</h2>
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
@@ -320,17 +322,17 @@
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
 
-														<h2>destination</h2>
+														<h2>location</h2>
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination country</option><!-- /.option-->
+															  	<option value="default">enter your pick up location</option><!-- /.option-->
 
-															  	<option value="turkey">turkey</option><!-- /.option-->
+															  	<option value="frb">frederiksberg</option><!-- /.option-->
 
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
+															  	<option value="gladsax">Gladsaxe</option><!-- /.option-->
+															  	<option value="valby">Valby</option><!-- /.option-->
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -338,12 +340,12 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination location</option><!-- /.option-->
+															  	<option value="default">enter your delivery location</option><!-- /.option-->
 
-															  	<option value="istambul">istambul</option><!-- /.option-->
+															  	<option value="istambul">frederiksberg</option><!-- /.option-->
 
-															  	<option value="mosko">mosko</option><!-- /.option-->
-															  	<option value="cairo">cairo</option><!-- /.option-->
+															  	<option value="gladsaxe">Gladsaxe</option><!-- /.option-->
+															  	<option value="valby">valby</option><!-- /.option-->
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -353,7 +355,7 @@
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check in</h2>
+														<h2>pick up</h2>
 														<div class="travel-check-icon">
 															<form action="#">
 																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
@@ -364,7 +366,7 @@
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check out</h2>
+														<h2>delivery</h2>
 														<div class="travel-check-icon">
 															<form action="#">
 																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="22 -01 - 2017 ">
@@ -393,7 +395,7 @@
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>members</h2>
+														<h2>baskets</h2>
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
@@ -601,15 +603,15 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
-								<img src="assets/images/service/s1.png" alt="service-icon" />
+								<img src="assets/images/service/truck.png" height="110" width="110" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 								<h2>
 									<a href="#">
-									amazing tour packages
+									Free pick up & delivery
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+								<p>Pick-up and delivery are always FREE. We can even arrange to come by while you’re out.</p>
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -617,15 +619,15 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
-								<img src="assets/images/service/s2.png" alt="service-icon" />
+								<img src="assets/images/service/services.png" height="110" width="110" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 								<h2>
 									<a href="#">
-										book top class hotel
+										Customized Services
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+								<p>Just tell us your laundry preferences and we’ll return your items exactly as requested!</p>
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -633,16 +635,16 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="statistics-img">
-								<img src="assets/images/service/s3.png" alt="service-icon" />
+								<img src="assets/images/service/guaranteed.png" height="110" width="110" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 
 								<h2>
 									<a href="#">
-										online flight booking
+										Easy Ordering
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+								<p>Create an account online and doing the laundry will be as easy as ordering a pizza.</p>
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -681,7 +683,7 @@
 								latest news
 							</h2>
 							<p>
-								Travel News from all over the world 
+								Our News from all over Denmark 
 							</p>
 						</div><!--/.gallery-header-->
 						<div class="blog-content">
@@ -689,9 +691,9 @@
 
 								<div class="col-sm-4 col-md-4">
 									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
+										<h2>trending news <span>27 July 2017</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b1.jpg" alt="blog-img">
+											<img src="assets/images/blog/folded-clothes.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
@@ -700,11 +702,10 @@
 											<div class="blog-txt">
 												<h3>
 													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in Prag
-													</a>
+														BABY LAUNDRY 101:Caring for your baby's clothes & toys													</a>
 												</h3>
 												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+													Babies are a blessing. They bring joy into your life and complete you. However, babies do come with a little extra work. It’s amazing how many stains such a little person can create. We can’t really help you with every aspect of being a new parent, but we can help with the laundry side of things. Baby skin is soft and sensitive, thus requires extra attention when it comes to what touches the skin. 
 												</p>
 												<a href="#">Read More</a>
 											</div><!--/.blog-txt-->
@@ -715,9 +716,9 @@
 
 								<div class="col-sm-4 col-md-4">
 									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
+										<h2>trending news <span>15 august 2017</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b2.jpg" alt="blog-img">
+											<img src="assets/images/blog/suit.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
@@ -725,11 +726,15 @@
 											<div class="blog-txt">
 												<h3>
 													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in india
+														Guide To Caring For A Men's Suit
 													</a>
 												</h3>
 												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+													Dry cleaning is the best method for getting stains out of a men's dress suit.
+                                                    Often we take our suits to the dry cleaners too often.
+													This menswear guide explains how to tell when it's time to take a suit in for dry-cleaning.
+													A man's dress suit is one of the most expensive additions to most men's wardrobes.
+                                                    So knowing how to care for and clean a dress suit is something that all men should be knowledgeable about.
 												</p>
 												<a href="#">Read More</a>
 											</div><!--/.blog-txt-->
@@ -740,17 +745,22 @@
 
 								<div class="col-sm-4 col-md-4">
 									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
+										<h2>trending news <span>15 november 2018</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b3.jpg" alt="blog-img">
+											<img src="assets/images/blog/comforter-duvet.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
 										<div class="caption">
 											<div class="blog-txt">
-												<h3><a href="#">10 Most Natural place to Discover</a></h3>
+												<h3><a href="#">Machine Wash Or Dry Clean A Comforter?</a></h3>
 												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+														You can’t see it, but your comforter gets dirtier every night. 
+														Everyone loses moisture in their sleep by sweating. On top of that, 
+														skin flakes come off while you toss & turn. House dust mites survive 
+														off your skin flakes and live in your bed sheets, comforters, & pillows. 
+														Moisture and spider relatives in your bed.. You can probably imagine 
+														that this isn’t ideal for a good night’s rest. Therefor, it is important to have your comforters cleaned professionally at least once or twice a year.
 												</p>
 												<a href="#">Read More</a>
 											</div><!--/.blog-txt-->
@@ -776,7 +786,7 @@
 						Join our Subscribers List to Get Regular Update
 					</h2>
 					<p>
-						Subscribe Now. We will send you Best offer for your Trip 
+						Subscribe Now To Get Awesome Specials And Coupons. 
 					</p>
 				</div>
 				<form>
@@ -821,11 +831,10 @@
 								<h2>link</h2>
 								<div class="single-footer-txt">
 									<p><a href="#">home</a></p>
-									<p><a href="#">destination</a></p>
-									<p><a href="#">spacial packages</a></p>
-									<p><a href="#">special offers</a></p>
-									<p><a href="#">blog</a></p>
-									<p><a href="#">contacts</a></p>
+									<p><a href="#">login</a></p>
+									<p><a href="#">register</a></p>
+									<p><a href="#blog">services</a></p>
+									<p class="smooth-menu"><a href="#">blog</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 
@@ -833,13 +842,13 @@
 
 						<div class="col-sm-3">
 							<div class="single-footer-item">
-								<h2>popular destination</h2>
+								<h2>laundryNest in Copenhagen</h2>
 								<div class="single-footer-txt">
-									<p><a href="#">china</a></p>
-									<p><a href="#">venezuela</a></p>
-									<p><a href="#">brazil</a></p>
-									<p><a href="#">australia</a></p>
-									<p><a href="#">london</a></p>
+									<p><a href="#">frederiksberg</a></p>
+									<p><a href="#">amager</a></p>
+									<p><a href="#">rodøvre</a></p>
+									<p><a href="#">gladsaxe</a></p>
+									<p><a href="#">valby</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->
@@ -866,7 +875,7 @@
 		                <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
 		                <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
 		        	</ul>
-		        	<p>&copy; 2017 <a href="https://www.themesine.com">TropaxSINE</a>. All Right Reserved</p>
+		        	<p>&copy; 2018 <a href="https://www.themesine.com">TropaxSINE</a>. All Right Reserved</p>
 
 		        </div><!--/.foot-icons-->
 				<div id="scroll-Top">

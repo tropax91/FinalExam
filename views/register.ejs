@@ -15,6 +15,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
 </head>
+
 <style>
     .container3{
         margin: auto;
@@ -56,7 +57,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/beboer/login">Login</a>
+                        <a class="nav-link" href="login">Login</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/beboer/register">Sign Up</a>
@@ -90,14 +91,14 @@
                         <div class="col">
                             <!-- First name -->
                             <div class="md-form">
-                                <input type="text" id="materialRegisterFormFirstName" name="firstName" class="form-control">
+                                <input type="text" id="FirstName" name="firstName" class="form-control">
                                 <label for="materialRegisterFormFirstName">First name</label>
                             </div>
                         </div>
                         <div class="col">
                             <!-- Last name -->
                             <div class="md-form">
-                                <input type="text" id="materialRegisterFormLastName" name="lastName" class="form-control">
+                                <input type="text" id="LastName" name="lastName" class="form-control">
                                 <label for="materialRegisterFormLastName">Last name</label>
                             </div>
                         </div>
@@ -105,13 +106,13 @@
 
                     <!-- E-mail -->
                     <div class="md-form mt-0">
-                        <input type="email" id="materialRegisterFormEmail" name="Email" class="form-control form-control-sm validate">
+                        <input type="email" id="Email" name="Email" class="form-control form-control-sm validate">
                         <label data-error="Invalid" data-success="Correct" for="materialRegisterFormEmail">E-mail</label>
                     </div>
 
                     <!-- Password -->
                     <div class="md-form">
-                        <input type="password" id="materialRegisterFormPassword" name="password" class="form-control"
+                        <input type="password" id="Password"  name="password" class="form-control"
                             aria-describedby="materialRegisterFormPasswordHelpBlock">
                         <label for="materialRegisterFormPassword">Password</label>
                         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
@@ -121,8 +122,8 @@
 
                     <!-- Building number -->
                     <div class="md-form">
-                        <input type="number" id="materialRegisterFormPhone" name="buildingID" class="form-control"
-                            aria-describedby="materialRegisterFormPhoneHelpBlock" min="1" max="8">
+                        <input type="number" id="BuildingID" name="buildingID" class="form-control"
+                            aria-describedby="materialRegisterFormPhoneHelpBlock">
                         <label for="materialRegisterFormPhone">BuildingID</label>
                         <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
                             Mandatory - for two step authentication
@@ -137,8 +138,10 @@
                     </div>
 
                     <!-- Sign up button -->
-                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign
+                    <button id="btn_1" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign
                         Up</button>
+                       
+                        
 
                     <!-- Social register -->
                     <p>or sign up with:</p>
@@ -163,7 +166,6 @@
 
         </div>
     </div>
-
 
 
 

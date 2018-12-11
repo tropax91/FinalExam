@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+//const passport = require('passport');
 const bcrypt = require('bcrypt');
 const flash = require('connect-flash');
-var LocalStrategy   = require('passport-local').Strategy;
+//var LocalStrategy   = require('passport-local').Strategy;
 
 
 
 
 //Login
-router.get('/login', function (req, res) {
-    res.render('login.ejs');
-});
+/*router.get('/login', function (req, res) {
+    res.render('login');
+});*/
 
-router.post('/login', passport.authenticate('local-login', {
+/*router.post('/login', passport.authenticate('local-login', {
     successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true
@@ -27,25 +27,21 @@ router.post('/login', passport.authenticate('local-login', {
             req.session.cookie.expires = false;
         }
         res.redirect('/');
-    });
+    });*/
 
     //Register
-    router.get('/register', function (req, res) {
+    /*router.get('/register', function (req, res) {
         res.render('register');
-    });
+    });*/
 
-    router.post('/register', passport.authenticate('local-register', {
-        successRedirect: '/profile',
-        failureRedirect: '/register',
-        failureFlash: true
-    }));
-
+   
     router.get('/profile', isLoggedIn, function (req, res) {
         res.render('profile.ejs', {
             user: req.user
         });
     });
 
+    //Logout
     router.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');

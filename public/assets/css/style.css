@@ -1282,7 +1282,7 @@ html,body{
 .subscribe {
     position: relative;
     padding: 120px 0;
-    background: url(../../assets/images/home/subscribe-banner.jpg)no-repeat center fixed;
+    background: url(../../assets/images/home/washer.jpg)no-repeat center fixed;
     background-size: cover;
     z-index: 1;
 }
