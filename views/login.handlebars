@@ -7,7 +7,6 @@
   <title>Laundry</title>
 
   <link rel="stylesheet" href="Styles.css">
-
   <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap core CSS -->
@@ -18,90 +17,50 @@
 
 <body>
   <header>
-    <!--Navbar-->
+     <!--Navbar-->
     {{> navbar}}
 <!--/.Navbar-->
+
 </header>
 <br>
 <br>
- <!-- Top content -->
- <div class="top-content mt-4">
-    <div class="container">
-        <div class="row">
-                <div class="container2">
-
-                        <div class="card">
-                            <h5 class="card-header info-color white-text text-center py-4"><strong>Sign in</strong></h5>
-                            <div class="card-body px-lg-5 pt-4">
-                            <!-- Default form login -->
-                        <form class="text-center mb-4" style="color:#757575;">
-                        
-                        
-                            <!-- Email -->
-                            <div class="md-form form">
-                                <input type="email" id="materialLoginFormEmail" class="form-control form-control-sm validate">
-                                <label data-error="wrong" data-success="right" for="materialLoginFormEmail">E-mail</label>
-                            </div> 
-                            <!-- Password -->
-                            <div class="md-form">
-                                    <input type="password" id="materialLoginFormPassword" class="form-control form-control-sm validate">
-                                    <label data-error="wrong" data-success="right" for="materialLoginFormPassword">Password</label>
-                                </div> 
-                            <div class="d-flex justify-content-around">
-                                <div>
-                                    <!-- Remember me -->
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                        <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <!-- Forgot password -->
-                                    <a href="">Forgot password?</a>
-                                </div>
-                            </div>
-                        
-                            <!-- Sign in button -->
-                            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
-                        
-                            <!-- Register -->
-                            <p>Not a member?
-                                <a href="register.html">Register</a>
-                            </p>
-                        
-                            <!-- Social login -->
-                            <p>or sign in with:</p>
-                        
-                            <a type="button" class="btn-floating btn-fb light-blue-text btn-sm">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a type="button" class="btn-floating btn-tw light-blue-text btn-sm">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a type="button" class="btn-floating btn-li light-blue-text btn-sm">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                           
-                        
-                        </form>
-                        </div>
-                        
-                        </div>
-                        <!-- Default form login -->
-                        </div>
+<br>
+<div class="container3">
+    <div class="card">
+    
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Login</strong>
+        </h5>
+    
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+    
+            <!-- Form -->
+            <form method="POST" action="/users/login">
+    
+                <div id="form-group"><label>Username:</label><input class="form-control" name="username" type="text" /></div>
+                <div id="form-group"><label>Password:</label><input class="form-control" name="password" type="password" /></div>
+                <br/><input class="btn btn-primary" type="submit" value="Submit" /></form>
+            </form>
+            <!-- Form -->
+    
         </div>
+    
     </div>
-</div>
+    </div>
 
 
 
 
 
 
+
+  
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>  
 
+</body>
 </body>
 </html>
 
@@ -116,5 +75,20 @@
 
 
 
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
