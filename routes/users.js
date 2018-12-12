@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-
 //Bring in User Models
 let User = require('../models/user');
 
@@ -75,6 +74,24 @@ router.post('/login', function(req, res, next){
     console.log("Du er nu logget ind med beboer")
 });
 
+//Profile page
+router.get('/profile', ensureAuthenticated, function(req, res){
+    //  console.log(req.user.username);
+    //m_name = User.name;
+    res.render('profile', 
+    {
+    name: req.user.name,
+    reservation: req.user.username
+    }
+    );
+    
+})
+
+//Profile change process
+router.post('/profile', function(req, res, next){
+    
+})
+
 //Logout
 router.get('/logout', function(req, res){
     req.logout();
@@ -82,5 +99,15 @@ router.get('/logout', function(req, res){
     res.redirect('/');
     console.log("Du er logget ud som User");
 });
+
+//Access control for profile page and more, taken from news
+function ensureAuthenticated(req, res, next){
+    if(req.isAuthenticated()) {
+        return next();
+    } else {
+        req.flash('danger', 'Please login');
+        res.redirect('/users/login');
+    }
+}
 
 module.exports = router;
