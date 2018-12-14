@@ -1,95 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Laundry</title>
 
-  <link rel="stylesheet" href="Styles.css">
-  <!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laundry</title>
+
+    <link rel="stylesheet" href="Styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
 </head>
 
+<style>
+.container3{
+  margin: auto;
+  width: 500px;
+  height: 600px;
+}
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+.danger-text {
+    color: #ff3547; }
+.default-text {
+    color: #2BBBAD; 
+}
+.info-text {
+    color: #33b5e5; 
+}
+.form-white .md-form label {
+  color: #fff; 
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+</style>
+
+
 <body>
-  <header>
-     <!--Navbar-->
-    {{> navbar}}
-<!--/.Navbar-->
+    <header>
+        <!--Navbar-->
+        {{> mainNav}}
+        <!--/.Navbar-->
 
-</header>
-<br>
-<br>
-<br>
-<div class="container3">
-    <div class="card">
-    
-        <h5 class="card-header info-color white-text text-center py-4">
-            <strong>Sign up</strong>
-        </h5>
-    
-        <!--Card content-->
-        <div class="card-body px-lg-5 pt-0">
-    
-            <!-- Form -->
-            <form method="POST" action="/bestyrelse/bestyrelseRegister">
-                <div id="form-group"><label>Name:</label><input class="form-control" name="name" type="text" /></div>
-                <div id="form-group"><label>Username:</label><input class="form-control" name="username" type="text" /></div>
-                <div id="form-group"><label>Email:</label><input class="form-control" name="email" type="text" /></div>
-                <div id="form-group"><label>Password:</label><input class="form-control" name="password" type="password" /></div>
-                <div id="form-group"><label>Confirm:</label><input class="form-control" name="password2" type="password" /></div><br/><input class="btn btn-primary" type="submit" value="Submit" /></form>
-            </form>
-            <!-- Form -->
-    
+    </header>
+   
+    <div class="text-center darken-grey-text mb-4">
+
+            <a class="btn btn-danger btn-md" href="/users/register">Beboer Register<i class="fa fa-user pl-2"></i></a>
         </div>
-    
+
+    <div class="container3">
+        <div class="card">
+
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Sign up</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+                <!-- Form -->
+                <form method="POST" action="/bestyrelse/bestyrelseRegister">
+                    <div id="form-group"><label>Name:</label><input class="form-control" name="name" type="text" /></div>
+                    <div id="form-group"><label>Username:</label><input class="form-control" name="username" type="text" /></div>
+                    <div id="form-group"><label>Email:</label><input class="form-control" name="email" type="text" /></div>
+                    <div id="form-group"><label>Password:</label><input class="form-control" name="password" type="password" /></div>
+                    <div id="form-group"><label>Confirm:</label><input class="form-control" name="password2" type="password" /></div><br /><input
+                        class="btn btn-primary" type="submit" value="Submit" />
+                </form>
+                </form>
+                <!-- Form -->
+
+            </div>
+        </div>
     </div>
-    </div>
+
+    <!--MDB Forms-->
+              <!--  <div class="container mt-4">
+                   <div class="row">
+                     <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <form>
+                                        <h2 class="text-center font-up font-bold deep-orange-text py-4"><i class="fa fa-user"></i>
+                                           Admin Sign up: </h2>
+                                        <div class="md-form">
+                                            <i class="fa fa-user prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-name3" name="name" class="form-control">
+                                            <label for="orangeForm-name3">Your name</label>
+                                        </div>
+                                        <div class="md-form">
+                                            <i class="fa fa-user-secret prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-name3" name="Uname" class="form-control">
+                                            <label for="orangeForm-name3">Username </label>
+                                        </div>
+                                        <div class="md-form">
+                                            <i class="fa fa-envelope prefix grey-text"></i>
+                                            <input type="email" id="orangeForm-email3" name="email" class="form-control">
+                                            <label for="orangeForm-email3">Your email</label>
+                                        </div>
+                                        <div class="md-form">
+                                            <i class="fa fa-lock prefix grey-text"></i>
+                                            <input type="password" id="orangeForm-pass3" class="form-control" name="Password">
+                                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                            <label for="orangeForm-pass3">Your password</label>
+                                        </div>
+                                        
+                                        <div class="text-center">
+                                            <button class="btn btn-secondary">Sign Up<i class="fa fa-angle-double-right pl-2"
+                                                    aria-hidden="true"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <hr class="my-4">
+
+                    <div class="text-center darken-grey-text mb-4">
+                        <h3 class="font-bold mb-3">Here you can find more Forms:</h3>
+                        <a class="btn btn-danger" href="https://mdbootstrap.com/components/forms/" target="_blank">Bootstrap
+                            Forms</a>
+                    </div>
+
+                </div>-->
+                <!--MDB Forms-->
 
 
 
 
 
+<script>
+    $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
 
 
-  
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>  
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
 
 </body>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
