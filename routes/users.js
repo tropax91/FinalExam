@@ -90,6 +90,48 @@ router.get('/profile', ensureAuthenticated, function(req, res){
 //Profile change process
 router.post('/profile', function(req, res, next){
     
+    //let User = {};
+    let old_Password;
+    let new_Password;
+    var _uID = req.user._id
+    //console.log(req.user.password);
+    //console.log(User.password);
+    req.checkBody('o_password', 'Old password').notEmpty();
+    req.checkBody('n_password', 'New password').notEmpty();
+    old_Password = req.body.o_password;
+    new_Password = req.body.n_password;
+    
+    //console.log(old_Password + "" + new_Password);
+    //Check if form is empty
+    
+    
+        //Match old password with bcrypt salted password
+        bcrypt.compare(old_Password, req.user.password, function(err, isMatch){
+            if(err){
+                console.log("Errors")
+            };
+            if(isMatch){
+                console.log(bcrypt.hash(new_Password, bcrypt.getSalt(req.user.password), function(err, hash){
+                    if (err) 
+                    {
+                        //console.log(err)
+                    }
+                    new_Password = hash;
+                    console.log(hash);
+                    //var myCollection = User.collection("User");
+                    //myCollection.updateOne({_id: _uID}, {$set:{password: n_password}}, function(err, res){
+                    User.findByIdAndUpdate(_uID, {password: hash}, {new: true}, function(err, res){
+                        if (err){
+
+                        }
+                        console.log(res.password)
+                        //res.redirect('/');
+                    })
+                }));
+                
+            }
+        })
+    res.render('profile', {name: req.user.name});
 })
 
 //Logout
