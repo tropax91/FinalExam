@@ -4,280 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Laundry</title>
-  <link rel="stylesheet" href="Styles.css">
-  <link rel="stylesheet" href="/public/profile.css">
-    
-
-  <!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <title>Document</title>
+  <link rel="stylesheet" href="/profile.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  
 </head>
-<style>
-    .containers{
-        width: 800px;
-        margin: auto;
-    }
-</style>
+
 <body>
-  <header>
-    <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light default-color lighten-4 fixed-top">
 
-  <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Laundromat</a>
+   <header>
+        <!--Navbar-->
+        {{> mainNav}}
+        <!--/.Navbar-->
 
-  <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="register.html">Sign Up</a>
-      </li>
-    </ul>
-    
-  </div>
-  <!-- Collapsible content -->
-
-</nav>
-<!--/.Navbar-->
-  </header>
-
-  <div class="container">
-    <div class="page-header text-center">
-      <h1>My Profile</h1>
-      <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="well">
-          <h3><span class="fa fa-user"></span> Welcome <%= user.firstname %></h3>
-
-          <p>
-            <strong>id</strong> <%= user.id %> <br>
-            <strong>firstname</strong> <%= user.firstname %> <br>
-          </p>
+    </header>
+ 
+<div class="container emp-profile mt-4">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="/images/profilPic.png" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        Dick Dickson
+                                    </h5>
+                                    <h6>
+                                        Web Developer and Designer
+                                    </h6>
+                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Reservations</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                          <button type="button" class="btn btn-outline-info" >Book a Machine</button>
+                            <p>SKILLS</p>
+                            <a href="">Web Designer</a><br/>
+                            <a href="">Web Developer</a><br/>
+                            <a href="">WordPress</a><br/>
+                            <a href="">WooCommerce</a><br/>
+                            <a href="">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Dope Dopamin</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>test@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Username:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>tropax</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>1 richlane, Copenhagen</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Latest:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Machine 4, 5 & 7</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Amount:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>10$/hr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Amount:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230$</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>English Level</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Availability</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>6 months</p>
+                                            </div>
+                                        </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
         </div>
-      </div>
-    </div>
-  </div>
 
 
 
-  <!--Main Content-->
-  <div class="containers">
-  <div class="row">
-    <div class="col-lg-4 col-md-12 mb-4">
-  
-      <h4 class="py-4 text-center">Wider</h4>
-  
-      <!--Card-->
-      <div class="card card-cascade wider mb-4">
-  
-        <!--Card image-->
-        <div class="view view-cascade">
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="card-img-top">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!--/Card image-->
-  
-        <!--Card content-->
-        <div class="card-body card-body-cascade text-center">
-          <!--Title-->
-          <h4 class="card-title"><strong>Christian Lynge</strong></h4>
-          <h5 class="indigo-text"><strong>Photographer</strong></h5>
-  
-          <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-            laudantium, totam
-            rem aperiam.
-          </p>
-  
-  
-          <!--Linkedin-->
-          <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-          <!--Twitter-->
-          <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
-          <!--Dribbble-->
-          <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
-  
-        </div>
-        <!--/.Card content-->
-  
-      </div>
-      <!--/.Card-->
-  
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-  
-      <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
-  
-      <!--Card-->
-      <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
-  
-        <!--Card image-->
-        <div class="view view-cascade">
-          <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top"
-            alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!--/.Card image-->
-  
-        <!--Card content-->
-        <div class="card-body card-body-cascade">
-          <h5 class="pink-text"><i class="fa fa-cutlery"></i> Culinary</h5>
-          <!--Title-->
-          <h4 class="card-title">Cheat day inspirations</h4>
-          <!--Text-->
-          <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            laboriosam, nisi ut
-            aliquid ex ea commodi.</p>
-          <a class="btn btn-unique">Button</a>
-        </div>
-        <!--/.Card content-->
-  
-      </div>
-      <!--/.Card-->
-  
-    </div>
-    <div class="col-lg-4 col-md-6">
-  
-      <h4 class="py-lg-4 pb-4 text-center">Regular</h4>
-  
-      <!--Card-->
-      <div class="card card-cascade">
-  
-        <!--Card image-->
-        <div class="view view-cascade">
-          <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="card-img-top" alt="">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!--/.Card image-->
-  
-        <!--Card content-->
-        <div class="card-body card-body-cascade text-center">
-          <!--Title-->
-          <h4 class="card-title"><strong>Carsper Larsen</strong></h4>
-          <h5>Web developer</h5>
-  
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex,
-            recusandae. Facere modi
-            sunt, quod quibusdam.
-          </p>
-  
-          <!--Facebook-->
-          <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
-          <!--Twitter-->
-          <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
-          <!--Google +-->
-          <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
-  
-        </div>
-        <!--/.Card content-->
-  
-      </div>
-      <!--/.Card-->
-  
-    </div>
-  </div>
-</div>
 
-
-<!--<div class="card">
-    <div class="box">
-        <div class="img">
-            <img src="https://www.planwallpaper.com/static/images/cool-wallpaper-5_G6Qe1wU.jpg">
-        </div>
-        <h2>Prakash Prajapati<br><span>Web Graphic Designer</span></h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et.</p>
-        <span>
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>
-        </span>
-    </div>
-</div>  -->
-
-
-
-  <!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
