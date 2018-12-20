@@ -12,12 +12,13 @@ router.get('/reserver', function(req, res){
 })
 
 //POST route
-router.post('/', function(req, res, next){
-    var myReserves = req.param('section');
+router.post('/test_console_output', function(req, res, next){
+    var myReserves = req.params('section');
     for (i = 0; myReserves.length > i; i++){
         console.log(myReserves[i])
     }
-    res.render('/');
+    console.log("I did it mah")
+    //res.render('/');
 })
 
 /*function ensureAuthenticated(req, res, next){
