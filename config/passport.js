@@ -1,5 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
+const Bestyrelse = require('../models/bestyrelse')
 const config = require('../config/database');
 const bcrypt = require('bcryptjs');
 

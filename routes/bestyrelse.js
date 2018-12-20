@@ -66,13 +66,12 @@ router.get('/bestyrelseLogin', function(req, res) {
 });
 
 // Login Process
-router.post('/bestyrelseLogin', function(req, res, next){
+router.post('/bestyrelseLogin', passport.authenticate('bestyrelse'),function(req, res, next){
     passport.authenticate('bestyrelse', {
         successRedirect: '/',
         failureRedirect: '/bestyrelse/bestyrelseLogin',
         failureFlash: true
     })(req, res, next);
-    console.log("Du er nu logget ind med bestyrelsen")
 });
 
 //Logout

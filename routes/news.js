@@ -105,11 +105,14 @@ router.delete('/:id', function (req,res){
 //Get single news
 router.get('/:id', function(req, res){
     News.findById(req.params.id, function(err, news){
+        if (err){
+            throw(err)
+        };
         User.findById(news.author, function(err, user){
             res.render('news', {
                 news:news,
                 author: user.name
-            });
+            });   
         });
     });
 });

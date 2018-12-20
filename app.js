@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const session = require('express-session');
 const config = require('./config/database');
-const passport = require('passport');
+var passport = require('passport');
 
 mongoose.connect(config.database);
 let db = mongoose.connection;

@@ -21,9 +21,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/news/news">News</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="/news/add">add news</a>
       </li>
     </ul>
@@ -42,7 +39,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/bestyrelse/bestyrelseRegister">Bestyrelse register</a>
       </li>
-      {{#if bestyrelse.id}}
+      {{#if user._id}}
       <li class="nav-item">
         <a class="nav-link" href="/nodemailer/nodemailer">send email</a>
       </li>
@@ -53,13 +50,6 @@
       <li class="nav-item">
         <a class="nav-link" href="/users/logout">ULogout</a>
       </li>
-      {{#if bestyrelse}}
-      <div class="nav-link" href="/bestyrelse/logout">ULogout</span></div>
-      {{else if users}}
-      <div class="nav-link" href="/users/logout">ULogout</span></div>
-      {{else}}
-      <div class="nav-link" href=""></span></div>
-      {{/if}}
     </ul>
     
   </div>
