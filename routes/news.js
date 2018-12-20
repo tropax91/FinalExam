@@ -14,7 +14,7 @@ router.get('/add', ensureAuthenticated, function(req, res){
 })
 
 //Add submit POST route
-router.post('/add', function(req, res){
+router.post('/add', ensureAuthenticated, function(req, res){
     //Rules express-validatior
     req.checkBody('title', 'Title is required').notEmpty();
     //req.checkBody('author', 'Author is required').notEmpty();
