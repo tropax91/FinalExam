@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//User Schema
+//Bestyrelse Schema
 const BestyrelseSchema = mongoose.Schema({
     name:{
         type: String,

@@ -21,10 +21,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/news/news">News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/news/add_news">add news</a>
+        <a class="nav-link" href="/news/add">add news</a>
       </li>
     </ul>
     <!-- Links -->
@@ -42,7 +39,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/bestyrelse/bestyrelseRegister">Bestyrelse register</a>
       </li>
-      {{#if bestyrelse.id}}
+      {{#if user._id}}
       <li class="nav-item">
         <a class="nav-link" href="/nodemailer/nodemailer">send email</a>
       </li>

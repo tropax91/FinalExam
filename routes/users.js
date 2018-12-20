@@ -71,7 +71,6 @@ router.post('/login', function(req, res, next){
         failureRedirect: '/users/login',
         failureFlash: true
     })(req, res, next);
-    console.log("Du er nu logget ind med beboer")
 });
 router.get('/profile', function(req, res) {
     res.render('profile');

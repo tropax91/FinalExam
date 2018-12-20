@@ -1,6 +1,6 @@
 let mongoose = require ('mongoose');
 
-// Article Schema
+//News Schema
 let newsSchema = mongoose.Schema( {
     title:{
         type: String,

@@ -9,9 +9,11 @@ module.exports = function(passport){
         // Match Username
         let query = {username:username};
         Bestyrelse.findOne(query, function(err, bestyrelse) {
+            console.log("login")
             if(err) throw err;
             if(!bestyrelse){
                 return done(null, false, console.log("ingen bruger"),{message: 'No user found'});
+                
             }
             //Match Password
             bcrypt.compare(password, bestyrelse.password, function(err, isMatch){
@@ -20,7 +22,7 @@ module.exports = function(passport){
                     console.log("bestyrelse fundet");
                     return done(null, bestyrelse);
                 } else {
-                    return done(null, false, {message: 'Wrong password'});
+                    return done(null, false, console.log("Forkert password"), {message: 'Wrong password'});
                 }
             });
 

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const session = require('express-session');
 const config = require('./config/database');
-const passport = require('passport');
+var passport = require('passport');
 
 mongoose.connect(config.database);
 let db = mongoose.connection;
@@ -114,6 +114,8 @@ let news = require('./routes/news');
 let users = require('./routes/users');
 let bestyrelse = require('./routes/bestyrelse');
 let nodemailer = require('./routes/nodemailer');
+let reservation = require('./routes/reservation');
+app.use('/reservation', reservation);
 app.use('/news', news);
 app.use('/users', users);
 app.use('/bestyrelse', bestyrelse);

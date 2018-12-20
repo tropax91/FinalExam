@@ -49,12 +49,12 @@ router.post('/send', (req, res) => {
 
         switch(vælgHus){
             case '22-26':
-                return "caspercpl@gmail.com" ;
+                return "caspercpl@gmail.com"; //Denne email vil blive lavet om til en function som henter alle email fra bruger i bygning 22-26
             case '26-30':
-                return "caspercpl@gmail.com";
+                return "caspercpl@gmail.com"; //Denne email vil blive lavet om til en function som henter alle email fra bruger i bygning 26-30
                 break;
             case '30-32':
-                return "caspercpl@gmail.com";
+                return "caspercpl@gmail.com"; //Denne email vil blive lavet om til en function som henter alle email fra bruger i bygning 30-32
                 break;
             default:
                 return "caspercpl@gmail.com"
