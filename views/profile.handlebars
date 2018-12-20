@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  
   <link rel="stylesheet" href="/profile.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -37,7 +38,7 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Dick Dickson
+                                       Hello {{user.name}}!
                                     </h5>
                                     <h6>
                                         Web Developer and Designer
@@ -78,7 +79,7 @@
                                                 <label>Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Dope Dopamin</p>
+                                                <p> {{user.name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -86,7 +87,7 @@
                                                 <label>Email:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>test@gmail.com</p>
+                                                <p> {{user.email}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -94,7 +95,7 @@
                                                 <label>Username:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>tropax</p>
+                                                <p> {{user.username}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

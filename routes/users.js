@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const expressValidator = require('express-validator');
+
 
 //Bring in User Models
 let User = require('../models/user');
