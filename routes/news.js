@@ -7,17 +7,17 @@ let News = require('../models/news');
 let User = require('../models/user');
 
 //Add route
-router.get('/add_news', ensureAuthenticated, function(req, res){
+router.get('/add', ensureAuthenticated, function(req, res){
     res.render('add_news', {
-        title:'Add Article'
+        title:'Add News'
     })
 })
 
 //Add submit POST route
-router.post('/add_news', function(req, res){
+router.post('/add', ensureAuthenticated, function(req, res){
     //Rules express-validatior
     req.checkBody('title', 'Title is required').notEmpty();
-    req.checkBody('author', 'Author is required').notEmpty();
+    //req.checkBody('author', 'Author is required').notEmpty();
     req.checkBody('body', 'Body is required').notEmpty();
 
     //Get Errors
@@ -31,7 +31,7 @@ router.post('/add_news', function(req, res){
     } else {
         let news = new News();
         news.title = req.body.title;
-        news.author = req.body.user._id;
+        news.author = req.user._id;
         news.body = req.body.body;
 
         news.save(function(err){
@@ -40,13 +40,14 @@ router.post('/add_news', function(req, res){
                 return;
             } else{
                 res.redirect('/')
+                console.log("News added")
             }
         })
     }
 })
 
 //Load edit form
-router.get('/edit_news/:id', ensureAuthenticated, function(req, res){
+router.get('/edit/:id', ensureAuthenticated, function(req, res){
     News.findById(req.params.id, function(err, news){
         if(news.author != req.user._id){
             res.redirect('/')
@@ -60,7 +61,7 @@ router.get('/edit_news/:id', ensureAuthenticated, function(req, res){
 });
 
 //Update Submit POST Route
-router.post('edit_news/:id', function(req,res){
+router.post('edit/:id', function(req,res){
     let news= {};
     news.title = req.body.title;
     news.author = req.body.author;
@@ -102,13 +103,16 @@ router.delete('/:id', function (req,res){
 });
 
 //Get single news
-router.get('/id', function(req, res){
+router.get('/:id', function(req, res){
     News.findById(req.params.id, function(err, news){
+        if (err){
+            throw(err)
+        };
         User.findById(news.author, function(err, user){
             res.render('news', {
                 news:news,
                 author: user.name
-            });
+            });   
         });
     });
 });

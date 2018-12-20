@@ -30,12 +30,14 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </div>
 
-  <ul class="news">
-    
-    {{#each article}}
-    <li>{{this}}</li>
-    {{/each}}
-  </ul>
+  <h1>News</h1>
+
+<div id="news">
+  {{#each news}}
+  <h2><a href="/news/{{../permalink}}{{_id}}">{{title}}</a></h2>  
+  
+  {{/each}}
+</div>
 
 
 
