@@ -67,11 +67,14 @@ router.get('/login', function(req, res) {
 // Login Process
 router.post('/login', function(req, res, next){
     passport.authenticate('beboer', {
-        successRedirect: '/',
+        successRedirect: '/users/profile',
         failureRedirect: '/users/login',
         failureFlash: true
     })(req, res, next);
     console.log("Du er nu logget ind med beboer")
+});
+router.get('/profile', function(req, res) {
+    res.render('profile');
 });
 
 //Profile page

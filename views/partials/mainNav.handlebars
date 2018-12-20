@@ -96,6 +96,12 @@ ul li.active{
                                 <li><a href="/users/login">Login</a></li>
                                 <li><a href="/users/register">Sign Up</a></li>
                                 <li><a href="#">Blog</a></li>
+                                {{#if user._id}}
+                                <li><a href="/nodemailer/nodemailer">Send Mail</a></li>{{/if}}
+                                {{#if user._id}}
+                                <li><a href="/users/logout">Logout</a></li> {{/if}}
+
+
                             </ul>
                         </nav>
                     </div>
