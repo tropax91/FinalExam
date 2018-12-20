@@ -115,6 +115,8 @@ let news = require('./routes/news');
 let users = require('./routes/users');
 let bestyrelse = require('./routes/bestyrelse');
 let nodemailer = require('./routes/nodemailer');
+let reservation = require('./routes/reservation');
+app.use('/reservation', reservation);
 app.use('/news', news);
 app.use('/users', users);
 app.use('/bestyrelse', bestyrelse);
