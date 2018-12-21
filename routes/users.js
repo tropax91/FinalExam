@@ -134,7 +134,7 @@ router.post('/profile', function(req, res, next){
             }
         })
     res.render('profile', {name: req.user.name});
-})
+});
 
 //Logout
 router.get('/logout', function(req, res){
