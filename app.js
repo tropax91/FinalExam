@@ -101,7 +101,7 @@ app.get('/', function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render('index2', {
+            res.render('index', {
                 title:'News',
                 news: news
             }); 
