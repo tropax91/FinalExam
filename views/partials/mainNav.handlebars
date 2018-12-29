@@ -11,10 +11,12 @@
       <li><a href="/users/register">Sign Up</a></li>
       {{/unless}}
       <li><a href="#">Blog</a></li>
+      <li><a href="/bestyrelse/adminIndex">Admin</a></li>
       {{#if user._id}}
       <li><a href="/nodemailer/nodemailer">Send Mail</a></li>{{/if}}
       {{#if user._id}}
-      <li><a href="/users/logout">Logout</a></li> {{/if}}
+      <li><a href="/users/logout">Logout</a></li> 
+      {{/if}}
     </ul>
   </nav>
   <label for="nav-toggle" class="nav-toggle-label">
