@@ -77,7 +77,7 @@ router.post('/bestyrelseLogin', function(req, res, next){
     console.log("Du er nu logget ind med bestyrelsen")
 });
 
-router.get('/adminIndex', function(req, res) {
+router.get('/adminIndex',ensureAuthenticated, function(req, res) {
     res.render('adminIndex');
 });
 router.get('/users', function(req, res) {

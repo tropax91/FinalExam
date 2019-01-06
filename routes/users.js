@@ -15,18 +15,7 @@ router.get('/register', function(req, res) {
 
 // Register Proccess
 router.post('/register', function(req, res){
-    if(!req.body.name) {
-        return res.status(401).send({"message":"Name is required"});
-    }
-    if(!req.body.email) {
-        return res.status(401).send({"message":"Email is required"});
-    }
-    if(!req.body.username) {
-        return res.status(401).send({"message":"Username is required"});
-    }
-    else if(!req.body.password) {
-        return res.status(401).send({"message":"Password is required"});
-    }
+   
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -41,6 +30,7 @@ router.post('/register', function(req, res){
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
     let errors = req.validationErrors();
+    
     if(errors) {
         res.render('register', {
             errors:errors
@@ -90,6 +80,10 @@ router.post('/login', function(req, res, next){
 });
 router.get('/profile', ensureAuthenticated, function(req, res) {
     res.render('profile');
+});
+
+router.get('/booking', ensureAuthenticated,function(req, res) {
+    res.render('booking');
 });
 
 //Logout
