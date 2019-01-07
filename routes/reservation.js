@@ -31,21 +31,25 @@ router.post('/add_reservation', function(req, res){
         console.log('Something went wrong during the posting method')
     }
     else
-    {
+    {   //Get a new reservation
         let mreservering = new reservering();
+        //Get data from the body
         mreservering.datestart = req.body.startDate;
         mreservering.dateend = req.body.end_Date;
+        //Save the data in the database
         mreservering.save(function(err, res){
+            //Check for errors
             if (err){
                 console.log('DB thingy not working' + err)
                 return;
             }
+            //Succesfull post
             else{
                 console.log('I posted the data')
             }
         });
     }
-    
+    //Redirect to index page
     res.redirect('/')
 })
 
