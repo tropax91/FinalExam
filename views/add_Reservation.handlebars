@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Laundry</title>
+
+  <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+  <header>
+     <!--Navbar-->
+    {{> navbar}}
+<!--/.Navbar-->
+
+</header>
+<br>
+<br>
+<br>
+<div>
+
+    <h5><p>Add a new reservation to the system</p></h5>
+     
+    <div>
+            <!-- Form -->
+            <form method='POST' action='/reservation/add_Reservation'>
+                <div id="form-group"><label>Start date</label><input class="form-control" name="startDate" type="text" /></div>
+                <div id="form-group"><label>End date<input class="form-control" name="end_Date"><br/><input class="btn btn-primary" type="submit" value="Submit"/></label></div>
+            </form>
+            <!-- Form -->
+    </div>
+</div>

@@ -11,6 +11,44 @@ router.get('/reserver', function(req, res){
     res.render('Reservescreen');
 })
 
+//Add reservation route
+router.get('/add_reservation', function(req, res){
+    res.render('add_reservation')
+})
+
+//SUBMIT add post router
+router.post('/add_reservation', function(req, res){
+
+    //Body check
+    req.checkBody('startDate', 'A starting date is required').notEmpty();
+    req.checkBody('end_Date', 'Ending date and time is required').notEmpty();
+
+    //Errors
+    let errors = req.validationErrors();
+    if(errors){
+        //Render the errors at a later time
+        res.render('add_Reservation')
+        console.log('Something went wrong during the posting method')
+    }
+    else
+    {
+        let mreservering = new reservering();
+        mreservering.datestart = req.body.startDate;
+        mreservering.dateend = req.body.end_Date;
+        mreservering.save(function(err, res){
+            if (err){
+                console.log('DB thingy not working' + err)
+                return;
+            }
+            else{
+                console.log('I posted the data')
+            }
+        });
+    }
+    
+    res.redirect('/')
+})
+
 //POST route
 router.post('/test_console_output', function(req, res, next){
     var myReserves = req.params('section');
