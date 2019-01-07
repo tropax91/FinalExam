@@ -8,11 +8,11 @@ const reseveringSchema = mongoose.Schema({
         //required: true,
     }, 
     datestart:{
-        type: Date,
+        type: String,
         required: true,
     },
     dateend:{
-        type: Date,
+        type: String,
         required: true,
     }
 });
