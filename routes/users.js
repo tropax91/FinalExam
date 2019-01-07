@@ -98,10 +98,10 @@ router.post('/profile', function(req, res, next){
     var _uID = req.user._id
     //console.log(req.user.password);
     //console.log(User.password);
-    req.checkBody('o_password', 'Old password').notEmpty();
-    req.checkBody('n_password', 'New password').notEmpty();
-    old_Password = req.body.o_password;
-    new_Password = req.body.n_password;
+    req.checkBody('o_pass', 'Old password').notEmpty();
+    req.checkBody('n_pass', 'New password').notEmpty();
+    old_Password = req.body.o_pass;
+    new_Password = req.body.n_pass;
     
     //console.log(old_Password + "" + new_Password);
     //Check if form is empty
@@ -110,7 +110,7 @@ router.post('/profile', function(req, res, next){
         //Match old password with bcrypt salted password
         bcrypt.compare(old_Password, req.user.password, function(err, isMatch){
             if(err){
-                console.log("Errors")
+                console.log("Errors" + err)
             };
             if(isMatch){
                 console.log(bcrypt.hash(new_Password, bcrypt.getSalt(req.user.password), function(err, hash){
@@ -133,7 +133,7 @@ router.post('/profile', function(req, res, next){
                 
             }
         })
-    res.render('profile', {name: req.user.name});
+    res.render('profile');
 });
 
 //Logout
