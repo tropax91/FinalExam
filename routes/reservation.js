@@ -6,6 +6,7 @@ let User = require('../models/user');
 /* Need a schematic for reservations*/
 let reservering = require('../models/reservering');
 
+
 //Reserve route
 router.get('/reserver', function(req, res){
     res.render('Reservescreen');
@@ -13,7 +14,9 @@ router.get('/reserver', function(req, res){
 
 //Add reservation route
 router.get('/add_reservation', function(req, res){
-    res.render('add_reservation')
+    getreservations();
+    res.render('add_reservation');
+
 })
 
 //SUBMIT add post router
@@ -71,4 +74,16 @@ router.post('/test_console_output', function(req, res, next){
         res.redirect('/users/login');
     }
 }*/
+
+function getreservations (){
+    var myReserves;
+    var DB = database;
+    var collection = reservering
+    collection.collection('reservering').find({}).toArray(function (err, res){
+        if(err){
+            console.log(err);
+        }
+        console.log(res);
+    });
+}
 module.exports = router;
