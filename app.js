@@ -48,10 +48,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Express Messages Middleware
+//Global Express Messages Middleware/Variables
 app.use(require('connect-flash')());
-app.use(function(req, res, next){
-    res.locals.messages= require('express-messages')(req, res);
+
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+   // res.locals.messages= require('express-messages')(req, res);
     next();
 });
 
@@ -84,7 +88,7 @@ app.get('*', function(req, res, next){
     next();
 });
 
-//Home Route
+//News Route
 app.get('/', function(req, res){
     News.find({}, function(err, news) {
         if(err){

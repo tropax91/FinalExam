@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {ensureAuthenticated} = require('../config/auth');
 
 //News models
 let News = require('../models/news');
@@ -117,16 +118,5 @@ router.get('/:id', function(req, res){
     });
 });
 
-
-
-//Access Control
-function ensureAuthenticated(req, res, next){
-    if(req.isAuthenticated()) {
-        return next();
-    } else {
-        req.flash('danger', 'Please login');
-        res.redirect('/users/login');
-    }
-}
 
 module.exports = router;

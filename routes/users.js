@@ -2,35 +2,25 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const {ensureAuthenticated} = require('../config/auth');
 //Bring in User Models
 let User = require('../models/user');
 
 
 // Login Form
-router.get('/login', (req, res) => {
-    res.render('login');
-});
+router.get('/login', (req, res) => res.render('login'));
 
 // Register Form
-router.get('/register', (req, res) => {
-    res.render('register');
-    req.session.errors = null;
-});
+router.get('/register', (req, res) => res.render('register'));
 
 // Change Password Form
-router.get('/editPassword',ensureAuthenticated, (req, res) => {
-    res.render('editPassword');
-});
+router.get('/editPassword', ensureAuthenticated, (req, res) => res.render('editPassword'));
 
 //Profile page
+router.get('/profile', ensureAuthenticated, (req, res) => res.render('profile'));
 
-router.get('/profile', ensureAuthenticated, (req, res) => {
-    res.render('profile');
-});
 //Booking Page
-router.get('/booking', ensureAuthenticated, (req, res) => {
-    res.render('booking');
-});
+router.get('/booking', ensureAuthenticated, (req, res) => res.render('booking'));
 
 
 // Register Proccess
@@ -80,7 +70,8 @@ router.post('/register', (req, res) => {
                         password,
                         password2
                     });
-                } else {
+                }
+                else {
                     let newUser = new User({
                         name: name,
                         email: email,
@@ -108,7 +99,7 @@ router.post('/register', (req, res) => {
 
 // Login Process
 router.post('/login', (req, res, next) => {
-    passport.authenticate('beboer', {
+    passport.authenticate('local', {
         successRedirect: '/users/profile',
         failureRedirect: '/users/login',
         failureFlash: true
@@ -116,8 +107,8 @@ router.post('/login', (req, res, next) => {
 });
 
 
-//Profile change process
-router.post('/profile', function (req, res, next) {
+//Password change process
+router.post('/editPassword', function (req, res, next) {
 
     //let User = {};
     let old_Password;
@@ -159,7 +150,9 @@ router.post('/profile', function (req, res, next) {
 
         }
     })
-    res.render('profile', { name: req.user.name });
+    res.render('profile', { 
+        name: req.user.name 
+    });
 });
 
 //Logout
@@ -170,14 +163,5 @@ router.get('/logout', (req, res) => {
     console.log("Du er logget ud som User");
 });
 
-//Access control for profile page and more, taken from news
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    } else {
-        req.flash('danger', 'Please login');
-        res.redirect('/users/login');
-    }
-}
 
 module.exports = router;
