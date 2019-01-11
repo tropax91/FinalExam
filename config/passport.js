@@ -5,26 +5,30 @@ const bcrypt = require('bcryptjs');
 
 module.exports = function(passport){
     //Local Strategy
-    passport.use('beboer',new LocalStrategy(function(username, password, done){
+    passport.use('beboer',new LocalStrategy({usernameField: 'username'},(username, password, done) => {
         // Match Username
-        let query = {username:username};
-        User.findOne(query, function(err, user) {
-            if(err) throw err;
-            if(!user){
-                return done(null, false, console.log("No user found!" +  err),{message: 'No user found'});
+        User.findOne({username: username})
+        .then(user => {
+            if (!user) {
+                return done(null, false, {message: 'That Username is not registered!'});
             }
-            //Match Password
-            bcrypt.compare(password, user.password, function(err, isMatch){
+
+             //Match Password
+             bcrypt.compare(password, user.password, (err, isMatch) => {
                 if(err) throw err;
+
                 if(isMatch){
                     return done(null, user);
                 } else {
-                    return done(null, false, {message: 'Wrong password'});
+                    return done(null, false, {message: 'Incorrect Password'});
                 }
             });
-
-        });
-    }));
+        })
+        .catch(err => console.log(err));
+        
+        })
+           
+    );
 
     passport.serializeUser(function(user, done) {
             done(null, user.id);

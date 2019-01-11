@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">-->
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
     <!-- Main css -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets2/css/style.css">
     <link rel="stylesheet" type="text/css" href="/assets2/fonts/material-icon/css/material-design-iconic-font.css">
-   </head>
+</head>
+
 <body>
 
     <header>
@@ -27,43 +30,63 @@
     </header>
     <br>
     <br>
-<!--New colorrob form-->
+    <!--New colorrob form-->
     <div class="main">
-         
+
         <!-- Sign up form -->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
+                        {{#if errors }}
+                          {{#each errors }}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{ this.msg }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                         {{/each}}
+                        {{/if}}
+
+                            {{#if success_msg }}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ success_msg }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {{/if}}
                         <h2 class="form-title">Register</h2>
 
-                        <form method="POST"  action="/users/register">
+                        <form method="POST" action="/users/register">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input class="form-control" type="text" name="name"  placeholder="Your Name" required/>
+                                <input class="form-control" type="text" name="name" placeholder="Your Name" />
                             </div>
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input class="form-control" type="text" name="username"  placeholder="Username" required/>
+                                <input class="form-control" type="text" name="username" placeholder="Username" />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input class="form-control" type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input class="form-control" type="email" name="email" id="email" placeholder="Your Email" />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input class="form-control" type="password" name="password" id="pass" placeholder="Password"/>
+                                <input class="form-control" type="password" name="password" id="pass" placeholder="Password" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input class="form-control" type="password" name="password2" id="re_pass" placeholder="Repeat your password"/>
+                                <input class="form-control" type="password" name="password2" id="re_pass" placeholder="Repeat your password" />
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
+                                    statements in <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Sign Up"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Sign Up" />
                             </div>
                         </form>
                     </div>
@@ -78,28 +101,19 @@
             </div>
         </section>
 
-       
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
 
     <!-- JS -->
     <script src="/assets2/vendor/jquery/jquery.min.js"></script>
     <script src="/assets2/js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
