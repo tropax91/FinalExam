@@ -20,13 +20,16 @@ let News = require('./models/news')
 
 const db = require('./config/database').database;
 
+//Connect to Mongo
 mongoose.connect(db, {useNewUrlParser: true})
 .then(() => console.log('MongoDB Connected...'))
 .catch(err => console.log(err));
 
 //Load view engine
-app.set('views',path.join(__dirname, 'views'));
-app.engine('handlebars', exphns());
+app.engine('handlebars', exphns({
+    defaultLayout:'main',
+    layoutsDir: path.join(__dirname, 'views/mainLayout') 
+}));
 app.set('view engine','handlebars');
 
 // Body parse Middleware
@@ -88,9 +91,9 @@ app.get('*', function(req, res, next){
     next();
 });
 
-//News Route
+//Home Route
 app.get('/', function(req, res){
-    News.find({}, function(err, news) {
+    News.find({}, (err, news) =>{
         if(err){
             console.log(err);
         } else {

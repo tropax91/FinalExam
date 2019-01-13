@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Laundry</title>
 
-  <link rel="stylesheet" href="Styles.css">
   <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap core CSS -->
@@ -36,9 +35,21 @@
         <div class="card-body px-lg-5 pt-0">
     
             <!-- Form -->
-            <form method='POST' action='/news/add_news'>
-                <div id="form-group"><label>Title:</label><input class="form-control" name="title" type="text" /></div>
-                <div id="form-group"><label>Body:<textarea class="form-control" name="body"></textarea><br/><input class="btn btn-primary" type="submit" value="Submit"/></label></div>
+            <form method='POST' action='/news/add'>
+                <div id="form-group">
+                    <label>Title:</label>
+                    <input class="form-control" name="title" type="text" />
+                </div>
+                 <div id="form-group">
+                    <label>Author:</label>
+                    <input class="form-control" name="author" type="text" />
+                </div>
+                <div id="form-group">
+                    <label>Body:<textarea class="form-control" name="body"></textarea>
+                     <br/>
+                     <input class="btn btn-primary" type="submit" value="Submit"/>
+                    </label>
+                </div>
             </form>
             <!-- Form -->
     

@@ -8,19 +8,29 @@ let User = require('../models/user');
 
 
 // Login Form
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('login', {
+    title: 'Login'
+}));
 
 // Register Form
-router.get('/register', (req, res) => res.render('register'));
+router.get('/register', (req, res) => res.render('register', {
+    title: 'Register'
+}));
 
 // Change Password Form
-router.get('/editPassword', ensureAuthenticated, (req, res) => res.render('editPassword'));
+router.get('/editPassword', ensureAuthenticated, (req, res) => res.render('editPassword', {
+    title: 'Edit Password'
+}));
 
 //Profile page
-router.get('/profile', ensureAuthenticated, (req, res) => res.render('profile'));
+router.get('/profile', ensureAuthenticated, (req, res) => res.render('profile', {
+    title: 'User Profile'
+}));
 
 //Booking Page
-router.get('/booking', ensureAuthenticated, (req, res) => res.render('booking'));
+router.get('/booking', ensureAuthenticated, (req, res) => res.render('booking', {
+    title: 'Booking Page'
+}));
 
 
 // Register Proccess
