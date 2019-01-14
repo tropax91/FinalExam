@@ -1,0 +1,99 @@
+<!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/assets2/css/style.css">
+    <link rel="stylesheet" href="/assets2/fonts/material-icon/css/material-design-iconic-font.css">
+
+    <header>
+        <!--Navbar-->
+        {{> mainNav}}
+        <!--/.Navbar-->
+
+    </header>
+    <br><br><br><br>
+
+<style type="text/css">
+    body {
+        font-family: sans-serif;
+    }
+
+    h1 {
+        font-family: serif;
+        margin-bottom: 0;
+    }
+
+    article {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-wrapper {
+        width: 200px;
+        float: left;
+        padding-right: 25px;
+        padding-bottom: 10px;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+    }
+
+    .image-wrapper span {
+        font-family: sans-serif;
+        font-size: 10px;
+        color: #ccc;
+    }
+
+    .article-meta {
+        font-family: sans-serif;
+        color: #aaa;
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 14px;
+        position: relative
+    }
+.wrapper{
+  margin: auto;
+  width: 650px;
+  height: 350px;
+  border: 1px solid rgb(106, 141, 238);
+  padding: 2px;
+  border-radius: 5px; /* 5px rounded corners */
+  box-shadow: 0 4px 8px 0 rgba(61, 90, 252, 0.2);
+
+}
+ body{
+        background: #eee
+    }
+</style>
+
+        <div class="wrapper">
+            <article>
+                <h1>{{news.title}} </h1>
+                <p class="article-meta"><strong>Author:</strong> {{author}}, <strong>Published:</strong> Yesterday</p>
+
+                <div class="image-wrapper">
+                    <img src="/images/outoforder.jpg">
+                    <span>Image source: The WEB</span>
+                </div>
+
+                <p>
+                    {{news.body}}
+                </p>
+                <p>{{new.body}} </p>
+
+            </article>
+           <a href="/news/edit/:id" ><button class="btn btn.success">Edit</button></a> 
+        </div>
+
+  
+    <!-- JS -->
+    <script src="/assets2/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets2/js/main.js"></script>
+

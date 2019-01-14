@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
+let user = require('../models/user');
+
 //Bring in Bestyrelse Models
 let Bestyrelse = require('../models/bestyrelse');
 
@@ -62,16 +64,35 @@ router.post('/bestyrelseRegister', function(req, res){
 
 // Login Form
 router.get('/bestyrelseLogin', function(req, res) {
-    res.render('bestyrelseLogin');
+    res.render('adminLogin');
 });
 
 // Login Process
 router.post('/bestyrelseLogin', passport.authenticate('bestyrelse'),function(req, res, next){
     passport.authenticate('bestyrelse', {
-        successRedirect: '/',
-        failureRedirect: '/bestyrelse/bestyrelseLogin',
+        successRedirect: '/bestyrelse/adminIndex',
+        failureRedirect: '/bestyrelse/adminLogin',
         failureFlash: true
     })(req, res, next);
+});
+
+router.get('/adminIndex', function(req, res) {
+    res.render('adminIndex');
+});
+router.get('/users', function(req, res) {
+    res.render('users');
+});
+router.get('/adminPages', function(req, res) {
+    res.render('adminPages');
+});
+router.get('/adminPosts', function(req, res) {
+    res.render('adminPosts');
+});
+router.get('/adminEdit', function(req, res) {
+    res.render('adminEdit');
+});
+router.get('/adminLogin', function(req, res) {
+    res.render('adminLogin');
 });
 
 //Logout
@@ -81,5 +102,15 @@ router.get('/logout', function(req, res){
     res.redirect('/bestyrelse/bestyrelseLogin');
     console.log("Du er logget ud som bestyrelse");
 });
+
+//Access Control
+function ensureAuthenticated(req, res, next){
+    if(req.isAuthenticated()) {
+        return next();
+    } else {
+        req.flash('danger', 'Please login');
+        res.redirect('/bestyrelse/adminLogin');
+    }
+}
 
 module.exports = router;

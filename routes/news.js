@@ -1,15 +1,35 @@
 const express = require('express');
 const router = express.Router();
+const { ensureAuthenticated } = require('../config/auth');
 
 //News models
 let News = require('../models/news');
 //User models
 let User = require('../models/user');
 
+
+router.get('/news', function (req, res) {
+    News.find({}, (err, news) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('news', {
+                title: 'News',
+                news: news
+            });
+        }
+    });
+});
 //Add route
-router.get('/add', ensureAuthenticated, function(req, res){
+router.get('/add', function (req, res) {
     res.render('add_news', {
-        title:'Add News'
+        title: 'Add News'
+    })
+})
+
+router.get('/singleNews', function (req, res) {
+    res.render('singleNews', {
+        title: 'singleNews '
     })
 })
 
@@ -54,8 +74,8 @@ router.get('/edit/:id', ensureAuthenticated, function(req, res){
             console.log("Not Authorized")
         }
         res.render('edit_news', {
-            title:'Edit news',
-            news:news
+            title: 'Edit news',
+            news: news
         });
     });
 });
@@ -67,13 +87,13 @@ router.post('edit/:id', function(req,res){
     news.author = req.body.author;
     news.body = req.body.body;
 
-    let query = {_id:req.params.id}
+    let query = { _id: req.params.id }
 
-    News.update(query, news, function(err){
-        if(err){
+    News.update(query, news, function (err) {
+        if (err) {
             console.log(err);
             return;
-        } else{
+        } else {
             res.redirect('/');
             console.log("news updated")
         }
@@ -81,18 +101,18 @@ router.post('edit/:id', function(req,res){
 });
 
 //Delete news
-router.delete('/:id', function (req,res){
-    if(!req.user._id){
+router.delete('/:id', function (req, res) {
+    if (!req.user._id) {
         res.status(500).send();
     }
-    let query = {_id:req.params.id}
+    let query = { _id: req.params.id }
 
-    News.findById(req.param.id, function(err, news){
-        if(news.author != req.user._id){
+    News.findById(req.param.id, function (err, news) {
+        if (news.author != req.user._id) {
             res.status(500).send();
-        }else {
-            News.remove(query, function(err){
-                if(err){
+        } else {
+            News.remove(query, function (err) {
+                if (err) {
                     console.log(err)
                 }
                 res.send('Success')
@@ -103,30 +123,19 @@ router.delete('/:id', function (req,res){
 });
 
 //Get single news
-router.get('/:id', function(req, res){
-    News.findById(req.params.id, function(err, news){
-        if (err){
-            throw(err)
+router.get('/:id', function (req, res) {
+    News.findById(req.params.id, function (err, news) {
+        if (err) {
+            throw (err)
         };
-        User.findById(news.author, function(err, user){
-            res.render('news', {
-                news:news,
+        User.findById(news.author, function (err, user) {
+            res.render('singleNews', {
+                news: news,
                 author: user.name
             });   
         });
     });
 });
 
-
-
-//Access Control
-function ensureAuthenticated(req, res, next){
-    if(req.isAuthenticated()) {
-        return next();
-    } else {
-        req.flash('danger', 'Please login');
-        res.redirect('/users/login');
-    }
-}
 
 module.exports = router;
