@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const {ensureAuthenticated} = require('../config/auth');
 //Bring in User Models
-let User = require('../models/user');
+let User = require('../models/user'); 
 
 
 // Login Form
@@ -30,6 +30,11 @@ router.get('/profile', ensureAuthenticated, (req, res) => res.render('profile', 
 //Booking Page
 router.get('/booking', ensureAuthenticated, (req, res) => res.render('booking', {
     title: 'Booking Page'
+}));
+
+//ReserveScreen Page
+router.get('/ReserveScreen', ensureAuthenticated, (req, res) => res.render('ReserveScreen', {
+    title: 'ReserveScreen '
 }));
 
 
