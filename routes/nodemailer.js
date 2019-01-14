@@ -88,13 +88,13 @@ router.post('/send', (req, res) => {
 
 router.post('/Test', (req, res) =>{
     const output = `
-    <p>You have a new request</p>
+    <p>You have a new Message</p>
     <h3>Contact Details</h3>
     <ul> 
     <li> Name:${req.body.name}</li> 
-    <li> Name:${req.body.address}</li> 
-    <li> Name:${req.body.email}</li> 
-    <li> Name:${req.body.phone}</li> 
+    <li> Address:${req.body.address}</li> 
+    <li> Email:${req.body.email}</li> 
+    <li> Phone:${req.body.phone}</li> 
    </ul>
    <h3>Message</h3>
    <p>${req.body.message}</p>
@@ -134,8 +134,8 @@ router.post('/Test', (req, res) =>{
     // setup e-mail data, even with unicode symbols
     let mailOptions = {
         from: ' "Nodemailer test" <kettebovaskeri@gmail.com>', // sender address (who sends)
-        to: 'tropax6@gmail.com', // list of receivers (who receives)
-        subject: 'Besked til beboer i bygning', // Subject line
+        to: 'caspercpl@gmail.com', // list of receivers (who receives)
+        subject: 'You suck dude!', // Subject line
         html: output,// html body
     };
 

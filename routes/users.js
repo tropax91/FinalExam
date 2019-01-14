@@ -121,18 +121,38 @@ router.post('/login', (req, res, next) => {
 router.post('/editPassword', function (req, res, next) {
 
     //let User = {};
-    let old_Password;
-    let new_Password;
-    var _uID = req.user._id
+    const old_Password = req.body.o_pass;
+    let new_Password = req.body.n_pass;
+    const new_Password2 = req.body.n_pass2;
+    var _uID = req.user._id;
+    let errors = [];
+
     //console.log(req.user.password);
     //console.log(User.password);
-    req.checkBody('o_password', 'Old password').notEmpty();
-    req.checkBody('n_password', 'New password').notEmpty();
-    old_Password = req.body.o_password;
-    new_Password = req.body.n_password;
+    //Check required fields
+    if (!old_Password || !new_Password || !new_Password2) {
+        errors.push({ msg: 'Please fill in all fields' });
+    }
 
-    //console.log(old_Password + "" + new_Password);
-    //Check if form is empty
+    //Check passwords match
+    if (new_Password !== new_Password2) {
+        errors.push({ msg: 'Passwords do not match' });
+    }
+
+    //Check pass length
+    if (new_Password.length < 6) {
+        errors.push({ msg: 'Password should be at least 6 characters' });
+    }
+
+    if (errors.length > 0) {
+        res.render('editPassword', {
+            errors,
+            old_Password,
+            new_Password,
+            new_Password2       
+        });
+    }
+
 
 
     //Match old password with bcrypt salted password
@@ -154,13 +174,14 @@ router.post('/editPassword', function (req, res, next) {
 
                     }
                     console.log(res.password)
-                    //res.redirect('/');
+                    //res.redirect('/users/login');
                 })
             }));
 
         }
     })
-    res.render('profile', { 
+    req.flash('success_msg', 'Your password has been changed, try it.');
+    res.render('login', { 
         name: req.user.name 
     });
 });
