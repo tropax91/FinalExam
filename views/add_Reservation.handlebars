@@ -26,9 +26,17 @@
     <div>
             <!-- Form -->
             <form method='POST' action='/reservation/add_Reservation'>
-                <div id="form-group"><label>Start date</label><input class="form-control" name="startDate" type="text" /></div>
-                <div id="form-group"><label>End date<input class="form-control" name="end_Date"><br/><input class="btn btn-primary" type="submit" value="Submit"/></label></div>
+                <div id="form-group"><label>Start date</label><input class="form-control" name="startDate" type="datetime" /></div>
+                <div id="form-group"><label>End date<input class="form-control" name="end_Date" type="datetime"><br/><input class="btn btn-primary" type="submit" value="Submit"/></label></div>
             </form>
             <!-- Form -->
+    </div>
+
+    <div>
+        <ul class="Reservations">
+            {{#each reserveringer}}
+            <li>{{reservering}}</li>
+            {{/each}}
+        </ul>
     </div>
 </div>

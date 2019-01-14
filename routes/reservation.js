@@ -14,8 +14,10 @@ router.get('/reserver', function(req, res){
 
 //Add reservation route
 router.get('/add_reservation', function(req, res){
-    getreservations();
-    res.render('add_reservation');
+    
+    //var myReserves = getreservations();
+    
+    res.render('add_reservation', {reserveringer: getreservations()});
 
 })
 
@@ -77,13 +79,27 @@ router.post('/test_console_output', function(req, res, next){
 
 function getreservations (){
     var myReserves;
-    var DB = database;
-    var collection = reservering
-    collection.collection('reservering').find({}).toArray(function (err, res){
+
+    myReserves = reservering.find( {} ).then(function(reservations){
+        /*console.log(reservations.length)
+        for (let index = 0; index < reservations.length; index++) {
+            const element = reservations[index];
+            console.log(element);
+            
+     }
+
+     
+    })*/
+    /*reservering.db.createCollection('reserveringer');
+    var collection = reservering.db.collection('reservering');
+    collection.find({}).toArray(function (err, res){
         if(err){
             console.log(err);
         }
         console.log(res);
-    });
+        console.log()
+    });*/
+    //console.log(collection.length)
+})
 }
 module.exports = router;
