@@ -1,2 +1,2 @@
-# Bachelor-project
-Bachelor project
+# Final-project
+
